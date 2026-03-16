@@ -73,7 +73,7 @@ params:
 
     socialIcons:
         - name: Google Scholar
-          url: https://scholar.google.com/
+          url: https://scholar.google.com/citations?hl=en&user=f6HdKbkAAAAJ
         - name: LinkedIn
           url: https://www.linkedin.com/in/yx-guo
 
