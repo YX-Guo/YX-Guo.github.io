@@ -1,4 +1,4 @@
 ---
-title: "Papers"
-description: "Preprints and articles by Professor Dr von Igelfeld."
+title: "Publications"
+description: "Selected publications by Yuxin Guo."
 ---

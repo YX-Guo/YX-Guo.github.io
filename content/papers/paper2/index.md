@@ -1,61 +1,37 @@
 ---
-title: "The Finer Points of Sausage Dogs" 
-date: 2004-12-28
-tags: ["zoology","sausage dogs","canine pulmonary efficiency","canine science","experimental zoology"]
-author: ["Florianus Prinzel", "Moritz-Maria von Igelfeld"]
-description: "This paper studies the pulmonary efficiency of sausage dogs. Published in the Journal of Canine Science, 2004." 
-summary: "This paper studies the pulmonary efficiency of sausage dogs through several experiments." 
-cover:
-    image: "paper2.png"
-    alt: "Dimensions of a sausage dog"
-    relative: true
+title: "Identifying Neural Biomarkers of Risk-Taking from Intracranial EEG Recordings"
+date: 2025-06-01
+tags: ["neural biomarkers","intracranial EEG","risk-taking","deep learning"]
+author: ["Y. Guo","A. Merkley","S. Jaffee","A. Whiting","P. Grover"]
+description: "This paper presents a machine learning pipeline for identifying neural biomarkers of risk-taking from intracranial EEG. Published at IEEE Conference on Neural Engineering, 2025."
+summary: "Machine learning pipeline for identifying neural biomarkers of risk-taking behavior from intracranial EEG recordings."
+citation: '**Y. Guo**, A. Merkley, S. Jaffee, A. Whiting, P. Grover. "Identifying Neural Biomarkers of Risk-Taking from Intracranial EEG Recordings," *IEEE Conference on Neural Engineering, 2025 (in press).*'
+pub_authors: '**Y. Guo**, A. Merkley, S. Jaffee, A. Whiting, P. Grover.'
+pub_title: 'Identifying Neural Biomarkers of Risk-Taking from Intracranial EEG Recordings'
+pub_venue: '*IEEE Conference on Neural Engineering, 2025 (in press).*'
+paperurl: "https://www.biorxiv.org/content/10.1101/2025.10.08.681279v1"
 editPost:
-    URL: "https://github.com/pmichaillat/hugo-website"
-    Text: "Journal of Canine Science"
+    URL: ""
+    Text: "IEEE NER 2025"
 
 ---
-
----
-
-##### Download
-
-+ [Paper](paper2.pdf)
-+ [Online appendix](appendix2.pdf)
-+ [Code and data](https://github.com/pmichaillat/wunk-model)
 
 ---
 
 ##### Abstract
 
-This paper studies the pulmonary efficiency of sausage dogs. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur: $\sin(\theta) = x^2 - \exp(1+\chi)$. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor $\zeta$ incididunt ut labore et dolore magna aliqua: $p(x) = \int \cos(\zeta) d\zeta - \theta$. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
----
-
-##### Figure 2: Dimensions of a sausage dog
-
-![](paper2.png)
+This paper presents a machine learning pipeline for learning predictive biomarker representations from high-dimensional intracranial neural recordings, with a focus on identifying neural correlates of risk-taking behavior.
 
 ---
 
 ##### Citation
 
-Prinzel, Florianus, and Moritz-Maria von Igelfeld. 2004. "The Finer Points of Sausage Dogs." *Journal of Canine Science* 43 (2): 89–109. http://www.alexandermccallsmith.com/book/the-finer-points-of-sausage-dogs.
+**Y. Guo**, A. Merkley, S. Jaffee, A. Whiting, P. Grover. "Identifying Neural Biomarkers of Risk-Taking from Intracranial EEG Recordings", *IEEE Conference on Neural Engineering, 2025 (in press).*
 
 ```latex
-@article{PI04,
-author = {Florianus Prinzel and Moritz-Maria von Igelfeld},
-year = {2004},
-title ={The Finer Points of Sausage Dogs},
-journal = {Journal of Canine Science},
-volume = {43},
-number = {2},
-pages = {89--109},
-url = {http://www.alexandermccallsmith.com/book/the-finer-points-of-sausage-dogs}}
+@inproceedings{GMJWG25,
+author = {Y. Guo and A. Merkley and S. Jaffee and A. Whiting and P. Grover},
+year = {2025},
+title = {Identifying Neural Biomarkers of Risk-Taking from Intracranial EEG Recordings},
+booktitle = {IEEE Conference on Neural Engineering}}
 ```
-
----
-
-##### Related material
-
-+ [Presentation slides](presentation2.pdf)
-+ [Wikipedia entry](https://en.wikipedia.org/wiki/The_Finer_Points_of_Sausage_Dogs)

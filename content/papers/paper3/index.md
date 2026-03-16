@@ -1,52 +1,37 @@
 ---
-title: "Your Inner Hedgehog" 
-date: 2021-04-06
-tags: ["social psychology","inner hedgehog","academia","experimental psychology","invasive thoughts"]
-author: ["Hilda Schreiber-Ziegler", "Moritz-Maria von Igelfeld"]
-description: "This paper describes the inner hedgehog, a psychological condition widespread in academia. Published in the Journal of Socio-Experimental Psychology, 2021." 
-summary: "Using several case studies, this paper describes the inner hedgehog, a psychological condition widespread in academic occupations. The condition has lasting consequences and no known cure." 
-cover:
-    image: "paper3.png"
-    alt: "Vizualisation of an inner hedgehog"
-    relative: true
+title: "DeepFocus: A Transnasal Approach for Optimized Deep Brain Stimulation of Reward Circuit Nodes"
+date: 2025-03-01
+tags: ["brain stimulation","optimization","deep learning","neural engineering"]
+author: ["Y. Guo","M. Forssell","D. Kusyk","et al."]
+description: "DeepFocus is an end-to-end simulation and optimization platform integrating physical modeling with ML-driven inverse optimization for deep brain stimulation. Published in Journal of Neural Engineering, 2025."
+summary: "End-to-end simulation and optimization platform for deep brain stimulation, achieving >100x efficiency over state-of-the-art methods."
+citation: '**Y. Guo**, M. Forssell, D. Kusyk, et al. "DeepFocus: A Transnasal Approach for Optimized Deep Brain Stimulation of Reward Circuit Nodes," *Journal of Neural Engineering, 2025.*'
+pub_authors: '**Y. Guo**, M. Forssell, D. Kusyk, et al.'
+pub_title: 'DeepFocus: A Transnasal Approach for Optimized Deep Brain Stimulation of Reward Circuit Nodes'
+pub_venue: '*Journal of Neural Engineering, 2025.*'
+paperurl: "https://iopscience.iop.org/article/10.1088/1741-2552/adac0c"
 editPost:
-    URL: "https://github.com/pmichaillat/hugo-website"
-    Text: "Journal of Socio-Experimental Psychology"
+    URL: ""
+    Text: "Journal of Neural Engineering 2025"
 
 ---
-
----
-
-##### Download
-
-+ [Paper](paper3.pdf)
-+ [Raw data](https://github.com/pmichaillat/michez-rule)
 
 ---
 
 ##### Abstract
 
-Using several case studies, this paper describes the inner hedgehog, a psychological condition widespread in academic occupations. The condition has lasting consequences and no known cure. Mauris tincidunt quam a libero consequat, nec pharetra nunc tristique. Pellentesque eget ipsum ut dui laoreet congue ut nec nulla. Nulla facilisi. Sed consequat, odio ac aliquet tempor, turpis augue auctor mauris, at malesuada sem dolor eget libero. Nullam iaculis malesuada risus, id fringilla quam sagittis ac. Fusce congue vel ex et facilisis. Integer volutpat eros ut urna efficitur, id efficitur sapien pharetra.
+DeepFocus is an end-to-end simulation and optimization platform integrating physical modeling with ML-driven inverse optimization under biophysical constraints for deep brain stimulation of reward circuit nodes. The platform achieves over 100x efficiency improvement over state-of-the-art methods.
 
 ---
 
 ##### Citation
 
-Schreiber-Ziegler, Hilda, and Moritz-Maria von Igelfeld. 2021. "Your Inner Hedgehog." *Journal of Socio-Experimental Psychology* 131 (2): 1299–1302.
+**Y. Guo**, M. Forssell, D. Kusyk, et al. "DeepFocus: A Transnasal Approach for Optimized Deep Brain Stimulation of Reward Circuit Nodes", *Journal of Neural Engineering, 2025.*
 
 ```latex
-@article{SZI21,
-author = {Hilda Schreiber-Ziegler and Moritz-Maria von Igelfeld},
-year = {2021},
-title ={Your Inner Hedgehog},
-journal = {Journal of Socio-Experimental Psychology},
-volume = {131},
-number = {2},
-pages = {1299--1302}}
+@article{GFK25,
+author = {Y. Guo and M. Forssell and D. Kusyk and others},
+year = {2025},
+title = {DeepFocus: A Transnasal Approach for Optimized Deep Brain Stimulation of Reward Circuit Nodes},
+journal = {Journal of Neural Engineering}}
 ```
-
----
-
-##### Related material
-
-+ [Nontechnical summary](https://www.alexandermccallsmith.com/book/your-inner-hedgehog)

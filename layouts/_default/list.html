@@ -1,7 +1,113 @@
 {{- define "main" }}
 
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
-{{- partial "index_profile.html" . }}
+
+<div class="home-layout">
+
+  {{/* ---- Sidebar ---- */}}
+  <aside class="home-sidebar">
+    <div class="sidebar-inner">
+      {{- with site.Params.profileMode }}
+      <div class="sidebar-photo">
+        <img src="{{ .imageUrl | absURL }}" alt="profile image" />
+      </div>
+      <h1 class="sidebar-name">{{ .title }}</h1>
+      <p class="sidebar-bio">{{ .subtitle | markdownify }}</p>
+      {{- end }}
+      <div class="sidebar-social">
+        {{- range site.Params.socialIcons }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer me" title="{{ .name }}">
+          {{ partial "svg.html" . }}
+        </a>
+        {{- end }}
+      </div>
+    </div>
+  </aside>
+
+  {{/* ---- Main content ---- */}}
+  <div class="home-main">
+
+    {{/* Education */}}
+    <section class="home-section" id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="section-content">
+        <div class="education-entry">
+          <div class="edu-header">
+            <strong>Carnegie Mellon University</strong>
+            <span class="edu-location">Pittsburgh, PA</span>
+          </div>
+          <div class="edu-item">
+            <span>Ph.D. in Neural Computation and Machine Learning Joint Program</span>
+            <span class="edu-date">May 2027</span>
+          </div>
+          <div class="edu-item">
+            <span>B.S. in Electrical and Computer Engineering &amp; Biomedical Engineering</span>
+            <span class="edu-date">May 2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{/* Recent News */}}
+    <section class="home-section" id="news">
+      <h2 class="section-title">Recent News</h2>
+      <div class="section-content">
+        <ul class="news-list">
+          <li><strong>[01/26]</strong> Our paper on fundamental limits of EEG sensing is accepted to AISTATS.</li>
+        </ul>
+      </div>
+    </section>
+
+    {{/* Publications */}}
+    <section class="home-section" id="publications">
+      <h2 class="section-title">Selected Publications</h2>
+      <div class="section-content">
+        <ol class="publication-list">
+          {{- range (where site.RegularPages "Section" "papers").ByDate.Reverse }}
+          <li class="publication-item">
+            {{ .Params.pub_authors | markdownify }}
+            {{- if .Params.paperurl }}
+            "<a href="{{ .Params.paperurl }}" target="_blank" rel="noopener">{{ .Params.pub_title }}</a>,"
+            {{- else }}
+            "{{ .Params.pub_title }},"
+            {{- end }}
+            {{ .Params.pub_venue | markdownify }}
+          </li>
+          {{- end }}
+        </ol>
+      </div>
+    </section>
+
+    {{/* Awards */}}
+    <section class="home-section" id="awards">
+      <h2 class="section-title">Selected Awards</h2>
+      <div class="section-content">
+        <ul class="awards-list">
+          <li>Center of Machine Learning and Health, <strong>Translational Fellowship in Digital Health</strong>, 2024</li>
+          <li><strong>E.M. Williams Award</strong> (in recognition of a graduating senior with superior scholastic achievement), 2022</li>
+          <li>Senior Research Honors, 2021</li>
+        </ul>
+      </div>
+    </section>
+
+    {{/* Teaching */}}
+    <section class="home-section" id="teaching">
+      <h2 class="section-title">Teaching</h2>
+      <div class="section-content">
+        <ul class="teaching-list">
+          {{- range (where site.RegularPages "Section" "teaching").ByDate.Reverse }}
+          <li>
+            <strong>{{ .Title }}</strong> — {{ .Params.editPost.Text }}
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
 {{- else }} {{/* if not profileMode */}}
 
 {{- if not .IsHome | and .Title }}
@@ -54,14 +160,6 @@
   <header class="entry-header">
     <h2 class="entry-hint-parent">
       {{- .Title }}
-      {{- if .Draft }}
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
-      {{- end }}
     </h2>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
@@ -84,17 +182,11 @@
     {{- if $paginator.HasPrev }}
     <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
       «&nbsp;{{ i18n "prev_page" }}&nbsp;
-      {{- if (.Param "ShowPageNums") }}
-      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
-      {{- end }}
     </a>
     {{- end }}
     {{- if $paginator.HasNext }}
     <a class="next" href="{{ $paginator.Next.URL | absURL }}">
-      {{- i18n "next_page" }}&nbsp;
-      {{- if (.Param "ShowPageNums") }}
-      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
-      {{- end }}&nbsp;»
+      {{- i18n "next_page" }}&nbsp;&nbsp;»
     </a>
     {{- end }}
   </nav>
