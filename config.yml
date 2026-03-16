@@ -1,5 +1,5 @@
 baseURL: "https://YX-Guo.github.io/"
-title: Yuxin Guo
+title: Yuxin Guo | PhD Student at Carnegie Mellon University
 theme: PaperMod
 
 enableInlineShortcodes: true
@@ -50,11 +50,12 @@ params:
     ShowWordCount: false
     UseHugoToc: true
     comments: false
+    description: "Yuxin Guo - PhD student in Neural Computation and Machine Learning at Carnegie Mellon University. Research in machine learning, neural signal processing, and brain-computer interfaces."
     math: true
     profileMode:
           enabled: true
           title: Yuxin Guo
-          subtitle: "Hi! I am a PhD student in the [Neural Computation and Machine Learning Joint Program](https://www.ml.cmu.edu/academics/joint-phd-neural-computation.html) at Carnegie Mellon University, advised by [Prof. Pulkit Grover](https://users.ece.cmu.edu/~pgrover/) and [Prof. Robert Kass](https://www.stat.cmu.edu/~kass/). My research focuses on machine learning, deep learning, and optimization for neural signal processing. I develop end-to-end systems for neural sensing, source localization, and brain stimulation optimization under real-world hardware constraints. I have a strong background in generative models, time-series analysis, and convex optimization."
+          subtitle: "Hi! I am a PhD student in the [Neural Computation and Machine Learning Joint Program](https://ml.cmu.edu/people/phd-students) at Carnegie Mellon University, advised by [Prof. Pulkit Grover](https://users.ece.cmu.edu/~pgrover/) and [Prof. Robert Kass](https://www.stat.cmu.edu/~kass/). My research focuses on machine learning, deep learning, and optimization for neural signal processing. I develop end-to-end systems for neural sensing, source localization, and brain stimulation optimization under real-world hardware constraints."
           imageUrl: "picture.jpeg"
           imageWidth: 160
           imageHeight: 160
