@@ -2,11 +2,11 @@
 title: "Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging"
 date: 2023-01-01
 tags: ["EEG","deep learning","source imaging","neural engineering"]
-author: ["J. Rong","R. Sun","Y. Guo","B. He"]
+author: ["Jesse Rong","Rui Sun","Yuxin Guo","Bin He"]
 description: "This paper studies the effects of EEG electrode density on deep learning-based source imaging methods. Published in Brain Informatics, 2023."
 summary: "Study of how EEG electrode density affects deep learning-based source imaging performance."
-citation: 'J. Rong, R. Sun, **Y. Guo**, B. He. "Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging," *Brain Informatics, 2023.*'
-pub_authors: 'J. Rong, R. Sun, **Y. Guo**, B. He.'
+citation: 'Jesse Rong, Rui Sun, **Yuxin Guo**, Bin He. "Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging," *Brain Informatics, 2023.*'
+pub_authors: 'Jesse Rong, Rui Sun, **Yuxin Guo**, Bin He.'
 pub_title: 'Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging'
 pub_venue: '*Brain Informatics, 2023.*'
 paperurl: "https://link.springer.com/chapter/10.1007/978-3-031-43075-6_11"
@@ -26,11 +26,11 @@ This paper investigates the effects of EEG electrode numbers on deep learning-ba
 
 ##### Citation
 
-J. Rong, R. Sun, **Y. Guo**, B. He. "Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging", *Brain Informatics, 2023.*
+Jesse Rong, Rui Sun, **Yuxin Guo**, Bin He. "Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging", *Brain Informatics, 2023.*
 
 ```latex
 @article{RSGH23,
-author = {J. Rong and R. Sun and Y. Guo and B. He},
+author = {Jesse Rong and Rui Sun and Yuxin Guo and B. He},
 year = {2023},
 title = {Effects of EEG Electrode Numbers on Deep Learning-Based Source Imaging},
 journal = {Brain Informatics}}

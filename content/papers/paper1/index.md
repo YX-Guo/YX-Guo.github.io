@@ -2,13 +2,14 @@
 title: "Information-theoretic Error Bounds for Source Localization in Neural Sensing"
 date: 2026-01-01
 tags: ["information theory","source localization","neural sensing","EEG"]
-author: ["L. Barnes","Y. Guo","A. Dytso","P. Grover"]
+author: ["Leighton Barnes","Yuxin Guo","Alex Dytso","Pulkit Grover"]
 description: "This paper analyzes and quantifies theoretical limits of EEG sensing systems with Fisher information metrics. Accepted at AISTATS, 2026."
 summary: "Theoretical analysis of EEG sensing system limits using Fisher information metrics."
-citation: 'L. Barnes, **Y. Guo**, A. Dytso, P. Grover. "Information-theoretic Error Bounds for Source Localization in Neural Sensing," *AISTATS, 2026 (accepted).*'
-pub_authors: 'L. Barnes, **Y. Guo**, A. Dytso, P. Grover.'
+citation: 'Leighton Barnes, **Yuxin Guo**, Alex Dytso, Pulkit Grover. "Information-theoretic Error Bounds for Source Localization in Neural Sensing," *AISTATS, 2026.*'
+pub_authors: 'Leighton Barnes, **Yuxin Guo**, Alex Dytso, Pulkit Grover.'
 pub_title: 'Information-theoretic Error Bounds for Source Localization in Neural Sensing'
-pub_venue: '*AISTATS, 2026 (accepted).*'
+pub_venue: '*AISTATS, 2026.*'
+paperurl: "https://openreview.net/pdf?id=L98g0z9wbR"
 editPost:
     URL: ""
     Text: "AISTATS 2026"
@@ -25,11 +26,11 @@ This paper analyzes and quantifies theoretical limits of EEG sensing systems wit
 
 ##### Citation
 
-L. Barnes, **Y. Guo**, A. Dytso, P. Grover. "Information-theoretic Error Bounds for Source Localization in Neural Sensing", *AISTATS, 2026 (accepted).*
+Leighton Barnes, **Yuxin Guo**, Alex Dytso, Pulkit Grover. "Information-theoretic Error Bounds for Source Localization in Neural Sensing", *AISTATS, 2026.*
 
 ```latex
 @inproceedings{BGDG26,
-author = {L. Barnes and Y. Guo and A. Dytso and P. Grover},
+author = {Leighton Barnes and Yuxin Guo and Alex Dytso and P. Grover},
 year = {2026},
 title = {Information-theoretic Error Bounds for Source Localization in Neural Sensing},
 booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)}}

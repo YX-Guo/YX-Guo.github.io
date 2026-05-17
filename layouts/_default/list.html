@@ -2,6 +2,18 @@
 
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 
+{{/* Full-width sticky tab bar — sits above the layout so waves stop here cleanly */}}
+<nav class="home-tabs" aria-label="Sections">
+  <div class="home-tabs-inner">
+    <a href="#about" data-tab-link="about">About</a>
+    <a href="#news" data-tab-link="news">News</a>
+    <a href="#publications" data-tab-link="publications">Publications</a>
+    <a href="#awards" data-tab-link="awards">Awards</a>
+    <a href="#teaching" data-tab-link="teaching">Teaching</a>
+    <a href="#posts" data-tab-link="posts">Blog</a>
+  </div>
+</nav>
+
 <div class="home-layout">
 
   {{/* ---- Sidebar ---- */}}
@@ -12,7 +24,9 @@
         <img src="{{ .imageUrl | absURL }}" alt="profile image" />
       </div>
       <h1 class="sidebar-name">{{ .title }}</h1>
-      <p class="sidebar-bio">{{ .subtitle | markdownify }}</p>
+      {{- with .tagline }}
+      <p class="sidebar-tagline">{{ . | safeHTML }}</p>
+      {{- end }}
       {{- end }}
       <div class="sidebar-social">
         {{- range site.Params.socialIcons }}
@@ -27,59 +41,65 @@
   {{/* ---- Main content ---- */}}
   <div class="home-main">
 
-    {{/* Education */}}
-    <section class="home-section" id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="section-content">
-        <div class="education-entry">
-          <div class="edu-header">
-            <strong>Carnegie Mellon University</strong>
-            <span class="edu-location">Pittsburgh, PA</span>
-          </div>
-          <div class="edu-item">
-            <span>Ph.D. in Neural Computation and Machine Learning Joint Program</span>
-            <span class="edu-date">May 2027</span>
-          </div>
-          <div class="edu-item">
-            <span>B.S. in Electrical and Computer Engineering &amp; Biomedical Engineering</span>
-            <span class="edu-date">May 2022</span>
-          </div>
-        </div>
+    {{/* About */}}
+    <section class="home-section tab-section" id="about" data-tab="about">
+      <h2 class="section-title">About</h2>
+      <div class="section-content about-text">
+        {{ site.Params.profileMode.subtitle | markdownify }}
       </div>
     </section>
 
     {{/* Recent News */}}
-    <section class="home-section" id="news">
+    <section class="home-section tab-section" id="news" data-tab="news">
       <h2 class="section-title">Recent News</h2>
       <div class="section-content">
         <ul class="news-list">
-          <li><strong>[01/26]</strong> Our paper on fundamental limits of EEG sensing is accepted to AISTATS.</li>
+          <li><strong>[01/26]</strong> Our paper on fundamental limits of EEG sensing is accepted to AISTATS!</li>
+          <li><strong>[11/25]</strong> Presented our work at the IEEE NER conference!</li>
         </ul>
       </div>
     </section>
 
-    {{/* Publications */}}
-    <section class="home-section" id="publications">
+    {{/* Publications — grouped by year with venue badges */}}
+    <section class="home-section tab-section" id="publications" data-tab="publications">
       <h2 class="section-title">Selected Publications</h2>
       <div class="section-content">
-        <ol class="publication-list">
-          {{- range (where site.RegularPages "Section" "papers").ByDate.Reverse }}
-          <li class="publication-item">
-            {{ .Params.pub_authors | markdownify }}
-            {{- if .Params.paperurl }}
-            "<a href="{{ .Params.paperurl }}" target="_blank" rel="noopener">{{ .Params.pub_title }}</a>,"
-            {{- else }}
-            "{{ .Params.pub_title }},"
-            {{- end }}
-            {{ .Params.pub_venue | markdownify }}
-          </li>
-          {{- end }}
-        </ol>
+        {{- $papers := (where site.RegularPages "Section" "papers").ByDate.Reverse }}
+        {{- $years := slice }}
+        {{- range $papers }}
+          {{- $y := .Date.Format "2006" }}
+          {{- if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}
+        {{- end }}
+        {{- range $years }}
+          {{- $year := . }}
+          <div class="pub-year-group">
+            <div class="pub-year">{{ $year }}</div>
+            <ol class="publication-list">
+              {{- range $papers }}
+                {{- if eq (.Date.Format "2006") $year }}
+                <li class="publication-item">
+                  {{- with .Params.editPost.Text }}
+                  <span class="pub-badge">{{ . }}</span>
+                  {{- end }}
+                  <span class="pub-title">
+                    {{- if .Params.paperurl -}}
+                    <a href="{{ .Params.paperurl }}" target="_blank" rel="noopener">{{ .Params.pub_title }}</a>
+                    {{- else -}}
+                    {{ .Params.pub_title }}
+                    {{- end -}}
+                  </span>
+                  <div class="pub-authors">{{ .Params.pub_authors | markdownify }}</div>
+                </li>
+                {{- end }}
+              {{- end }}
+            </ol>
+          </div>
+        {{- end }}
       </div>
     </section>
 
     {{/* Awards */}}
-    <section class="home-section" id="awards">
+    <section class="home-section tab-section" id="awards" data-tab="awards">
       <h2 class="section-title">Selected Awards</h2>
       <div class="section-content">
         <ul class="awards-list">
@@ -91,7 +111,7 @@
     </section>
 
     {{/* Teaching */}}
-    <section class="home-section" id="teaching">
+    <section class="home-section tab-section" id="teaching" data-tab="teaching">
       <h2 class="section-title">Teaching</h2>
       <div class="section-content">
         <ul class="teaching-list">
@@ -104,9 +124,93 @@
       </div>
     </section>
 
+    {{/* Blog */}}
+    <section class="home-section tab-section" id="posts" data-tab="posts">
+      <h2 class="section-title">Blog</h2>
+      <div class="section-content">
+        {{- $posts := first 5 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+        {{- if $posts }}
+        <ul class="posts-list">
+          {{- range $posts }}
+          <li class="posts-item">
+            <a href="{{ .Permalink }}"><strong>{{ .Title }}</strong></a>
+            <span class="posts-date">{{ .Date.Format "Jan 2006" }}</span>
+            {{- with .Params.summary }}
+            <div class="posts-summary">{{ . }}</div>
+            {{- end }}
+          </li>
+          {{- end }}
+        </ul>
+        <p class="posts-all"><a href="/posts/">View all posts →</a></p>
+        {{- else }}
+        <p class="posts-coming-soon">Coming soon.</p>
+        {{- end }}
+      </div>
+    </section>
+
   </div>
 
 </div>
+
+<script>
+(function() {
+  var sections = document.querySelectorAll('.tab-section');
+  var tabLinks = document.querySelectorAll('[data-tab-link]');
+
+  function setActive(id) {
+    tabLinks.forEach(function(a) {
+      a.classList.toggle('tab-active', a.getAttribute('data-tab-link') === id);
+    });
+  }
+
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  tabLinks.forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = a.getAttribute('data-tab-link');
+      history.replaceState(null, '', '#' + id);
+      setActive(id);
+      scrollToSection(id);
+    });
+  });
+
+  // Scrollspy: highlight whichever section is closest to the top of the viewport.
+  var ticking = false;
+  function updateActiveOnScroll() {
+    var offset = 100; // accounts for sticky tab bar
+    var current = sections[0] ? sections[0].id : 'about';
+    sections.forEach(function(s) {
+      if (s.getBoundingClientRect().top - offset <= 0) current = s.id;
+    });
+    setActive(current);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateActiveOnScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // On load: respect hash if present, else just set initial active state.
+  if (location.hash) {
+    var initId = location.hash.slice(1);
+    if (document.getElementById(initId)) {
+      setActive(initId);
+      setTimeout(function() { scrollToSection(initId); }, 0);
+    } else {
+      updateActiveOnScroll();
+    }
+  } else {
+    updateActiveOnScroll();
+  }
+})();
+</script>
 
 {{- else }} {{/* if not profileMode */}}
 

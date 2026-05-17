@@ -12,8 +12,8 @@ taxonomies:
 
 menu:
     main:
-        - name: Education
-          url: /#education
+        - name: About
+          url: /#about
           weight: 1
         - name: News
           url: /#news
@@ -27,9 +27,11 @@ menu:
         - name: Teaching
           url: /#teaching
           weight: 5
+        - name: Blog
+          url: /#posts
+          weight: 6
 
 params:
-    description: "Yuxin Guo - PhD student at Carnegie Mellon University. Research in machine learning, neural signal processing, and optimization."
     author: Yuxin Guo
     DateFormat: "January 2006"
     defaultTheme: light
@@ -55,8 +57,17 @@ params:
     profileMode:
           enabled: true
           title: Yuxin Guo
-          subtitle: "Hi! I am a PhD student in the [Neural Computation and Machine Learning Joint Program](https://ml.cmu.edu/people/phd-students) at Carnegie Mellon University, advised by [Prof. Pulkit Grover](https://users.ece.cmu.edu/~pgrover/) and [Prof. Robert Kass](https://www.stat.cmu.edu/~kass/). My research focuses on machine learning, deep learning, and optimization for neural signal processing. I develop end-to-end systems for neural sensing, source localization, and brain stimulation optimization under real-world hardware constraints."
-          imageUrl: "picture.jpeg"
+          tagline: "PhD Student<br/>Machine Learning Department<br/>Neuroscience Institute<br/>Carnegie Mellon University"
+          subtitle: |
+            Hi! I am a PhD student in the [Neural Computation and Machine Learning Joint Program](https://ml.cmu.edu/people/phd-students) at Carnegie Mellon University, advised by [Prof. Pulkit Grover](https://users.ece.cmu.edu/~pgrover/) and [Prof. Robert Kass](https://www.stat.cmu.edu/~kass/). My research lies at the intersection of machine learning and brain-computer interfaces. Specifically, I work on two directions.
+
+            - **Reading** the brain through source localization and neural time-series analysis.
+            - **Intervening** with the brain through spatially and temporally optimized electrical stimulation.
+
+            Reading or intervening, I design algorithms that are accurate, safe, and reliable enough to actually trust on a brain.
+
+            Previously, I received my B.S. in Electrical and Computer Engineering from Carnegie Mellon University.
+          imageUrl: "IMG_6402.JPG"
           imageWidth: 160
           imageHeight: 160
           buttons:
@@ -76,6 +87,8 @@ params:
           url: https://scholar.google.com/citations?hl=en&user=f6HdKbkAAAAJ
         - name: LinkedIn
           url: https://www.linkedin.com/in/yx-guo
+        - name: email
+          url: mailto:yuxinguo@andrew.cmu.edu
 
     assets:
         disableScrollBarStyle: true
