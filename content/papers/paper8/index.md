@@ -9,8 +9,9 @@ citation: 'Haocheng Duan\*, **Yuxin Guo**\*, Jieyi Bi, Anqi Xie, Sirui Li, Yinin
 pub_authors: 'Haocheng Duan\*, **Yuxin Guo**\*, Jieyi Bi, Anqi Xie, Sirui Li, Yining Ma, Cathy Wu. (\*equal contribution)'
 pub_title: 'Interpreting Neural Combinatorial Optimization via Evolving Programmatic Bottlenecks'
 pub_venue: '*In submission, 2026.*'
+paperurl: "https://arxiv.org/abs/2606.19741"
 editPost:
-    URL: ""
+    URL: "https://arxiv.org/abs/2606.19741"
     Text: "In submission"
 
 ---
